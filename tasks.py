@@ -72,8 +72,8 @@ def send_notification():
         blocks = []
 
         for mention in keywords[keyword]:
-            url = mention["url"]
             title = mention["title"]
+            url = mention["url"].replace("www.reddit.com", "old.reddit.com")
 
             if any(subreddit in url for subreddit in subreddits_to_ignore):
                 print(
