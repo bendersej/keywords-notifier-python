@@ -6,6 +6,7 @@ from robocorp import workitems
 from robocorp.tasks import task
 from robocorp import vault
 from robocorp import storage
+from bs4 import BeautifulSoup
 
 
 def clean_list(list_of_strings):
@@ -51,6 +52,10 @@ def get_keywords(keyword_content):
 def send_notification():
     item = workitems.inputs.current
     emailContent = item.payload["email"]["text"]
+    emailHTML = item.email().html
+    soup = BeautifulSoup(emailHTML)
+
+    comments = soup.find_all("span")
 
     pattern = r"F5Bot found something!\n\n(.*?)\n\nDo you have comments or suggestions about F5Bot?"
     match = re.search(pattern, emailContent, re.DOTALL)
@@ -69,11 +74,15 @@ def send_notification():
     headers = {"Content-type": "application/json"}
 
     for keyword in keywords:
+        mention_idx = 0
         blocks = []
 
         for mention in keywords[keyword]:
             title = mention["title"]
             url = mention["url"].replace("www.reddit.com", "old.reddit.com")
+            comment = comments[mention_idx].getText()
+            print(comment)
+            mention_idx += 1
 
             if any(subreddit in url for subreddit in subreddits_to_ignore):
                 print(
@@ -87,7 +96,9 @@ def send_notification():
                     "type": "section",
                     "text": {
                         "type": "mrkdwn",
-                        "text": "\n".join([f"*{keyword}*", f"_{title}_"]),
+                        "text": "\n".join(
+                            [f"*Keyword: `{keyword}`*", f"_{title}_", f">{comment}"]
+                        ),
                     },
                 },
             )

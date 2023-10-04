@@ -8,3 +8,4 @@ dependencies:
       - robocorp-tasks==2.2.0
       - robocorp-vault==1.3.0
       - robocorp-workitems==1.4.0
+      - beautifulsoup4==4.12.2
