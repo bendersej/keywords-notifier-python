@@ -1,0 +1,29 @@
+[
+  {
+      "payload": {
+        "email": {
+          "messageId": "<E1qnoap-0005Ad-HK@static.atdhq.com>",
+          "from": {
+            "name": "F5Bot",
+            "address": "admin@f5bot.com"
+          },
+          "to": [
+            {
+              "name": "Benjamin André-Micolon",
+              "address": "benjamin@robocorp.com"
+            }
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "F5Bot found something: robocorp",
+          "date": "2023-10-03T23:14:19.000Z",
+          "replyTo": {
+            "name": "F5Bot",
+            "address": "admin@f5bot.com"
+          },
+          "text": "F5Bot found something!\n\n\nKeyword: \"robocorp\"\n  Reddit Comments (/r/rpa/): 'Power Automate or UiPath - setting up the first RPA process in the organization'\n    https://www.reddit.com/r/rustjob/comments/16ykxv8/c/k3crmod?context=3\n\nDo you have comments or suggestions about F5Bot? Please hit reply and let me know what you think!\n\nDo you maintain cron jobs, scheduled tasks, or similar periodic processes? Will you know in time if they fail?  Healthchecks.io alerts you when your jobs fail to run on time. Open source, quick setup (no coding required), clean dashboard, affordable pricing: free for hobby projects, $16/mo for businesses.\n\nWant to advertise your company or product on F5Bot? Hit reply to get in touch.\n\n\n\n\nYou are receiving this email because you signed up for alerts from F5Bot.\nIf you no longer wish to receive these emails, please log into your account at\nhttps://f5bot.com or visit the link below to disable all future emails:\nhttps://f5bot.com/disable-all?e=benjamin@robocorp.com&k=bnk35j5iofwc"
+        }
+      }
+  }
+]
+
