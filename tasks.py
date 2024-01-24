@@ -79,7 +79,8 @@ def send_notification():
 
         for mention in keywords[keyword]:
             title = mention["title"]
-            url = mention["url"].replace("www.reddit.com", "old.reddit.com")
+            reddit_url = requests.head(mention["url"], allow_redirects=True)
+            url = reddit_url.url.replace("www.reddit.com", "old.reddit.com")
             comment = comments[mention_idx].getText()
             print(comment)
             mention_idx += 1
